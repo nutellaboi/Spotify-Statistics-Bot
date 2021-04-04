@@ -5,6 +5,7 @@ from spotify_api import *
 import json
 
 cfg=ConfigReader('config.cfg')
+dtf_obj=DateTimeFormatting()
 
 bot_token = cfg.read_token_from_config_file()
 chat_id = cfg.read_user_id_from_config_file()
@@ -16,7 +17,7 @@ bot=telegram.Bot(token=bot_token)
 #print(bot.get_me())
 #print(bot.getUpdates()[-1].message.chat_id)#to get chat_id
 
-todays_timestamp=get_todays_timestamp()
+todays_timestamp=dtf_obj.get_todays_timestamp()
 todays_songs_dict=get_my_todays_recently_played_songs(todays_timestamp)
 
 song_list_msg=''

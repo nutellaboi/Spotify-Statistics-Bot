@@ -30,7 +30,10 @@ top_artists_msg='Your Top 5 Artists :\n'
 for i in range(len(top_artists)):
     top_artists_msg = top_artists_msg + f'{i+1}. {top_artists[i]}\n'
 
+if(len(todays_songs_dict)==1):
+    bot.send_message(text=f'Hey! You listned to {len(todays_songs_dict)} song today.',chat_id=chat_id)
+else:
+    bot.send_message(text=f'Hey! You listned to {len(todays_songs_dict)} songs today.',chat_id=chat_id)
 
-bot.send_message(text=f'Hey! You listned to {len(todays_songs_dict)} songs today.',chat_id=chat_id)
 bot.send_message(text=song_list_msg,chat_id=chat_id)
 bot.send_message(text=top_artists_msg,chat_id=chat_id)

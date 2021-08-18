@@ -5,7 +5,7 @@
 # Steps to run the application
     1. Edit the config.cfg file with proper credentials
     2. Install all packages from Requirements.txt
-    3. Run telegram_bot.py
+    3. Run telegram_bot.py in background - https://janakiev.com/blog/python-background/
 
 # Resources
     1. Spotipy Library - https://spotipy.readthedocs.io/en/2.6.1/?highlight=scope#

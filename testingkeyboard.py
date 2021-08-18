@@ -32,13 +32,21 @@ def start(update: Update, _: CallbackContext) -> int:
     # a list (hence `[[...]]`).
     keyboard = [
         [
-            InlineKeyboardButton("1", callback_data=str(ONE)),
-            InlineKeyboardButton("2", callback_data=str(TWO)),
+            InlineKeyboardButton("Today's songs history", callback_data=str(ONE))      
+        ],
+        [
+            InlineKeyboardButton("My Top 5 Artists", callback_data=str(TWO))
+        ],
+        [
+            InlineKeyboardButton("Today's Listnening time", callback_data=str(THREE))
+        ],
+        [
+            InlineKeyboardButton("Stop", callback_data=str(FOUR))
         ]
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)
     # Send message with text and appended InlineKeyboard
-    update.message.reply_text("Start handler, Choose a route", reply_markup=reply_markup)
+    update.message.reply_text(f"Hey {user.first_name}, how can i help you?", reply_markup=reply_markup)
     # Tell ConversationHandler that we're in state `FIRST` now
     return FIRST
 
@@ -70,14 +78,12 @@ def one(update: Update, _: CallbackContext) -> int:
     query.answer()
     keyboard = [
         [
-            InlineKeyboardButton("3", callback_data=str(THREE)),
-            InlineKeyboardButton("4", callback_data=str(FOUR)),
+            InlineKeyboardButton("end ", callback_data=str(TWO)),
+            InlineKeyboardButton("start over", callback_data=str(FOUR)),
         ]
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)
-    query.edit_message_text(
-        text="First CallbackQueryHandler, Choose a route", reply_markup=reply_markup
-    )
+    update.message.reply_text("playlist function goes here ",reply_markup=reply_markup)
     return FIRST
 
 
@@ -87,8 +93,8 @@ def two(update: Update, _: CallbackContext) -> int:
     query.answer()
     keyboard = [
         [
-            InlineKeyboardButton("1", callback_data=str(ONE)),
-            InlineKeyboardButton("3", callback_data=str(THREE)),
+            InlineKeyboardButton("yyyyyyyyyyyyy", callback_data=str(ONE)),
+            InlineKeyboardButton("222222222222", callback_data=str(THREE)),
         ]
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)

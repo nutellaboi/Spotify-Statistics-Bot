@@ -1,6 +1,8 @@
 # Spotify-Statistics-Bot
 
-# devv
+# Edit the config.cfg file with proper credentials
 
-# config.cfg file missing
+# Install all packages from Requirements.txt
+
+# Run telegram_bot.py 
 

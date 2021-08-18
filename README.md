@@ -1,4 +1,3 @@
 # Spotify-Statistics-Bot
 
-# master
 
